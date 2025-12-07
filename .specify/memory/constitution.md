@@ -1,55 +1,76 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: None -> 1.0.0 (MAJOR: Initial version/significant update)
+Modified principles: All (initial definition)
+Added sections: Key Standards, Docusaurus Installation Standards, Constraints, Success Criteria
+Removed sections: None
+Templates requiring updates:
+- .specify/templates/plan-template.md: ⚠ pending (review for alignment with new principles)
+- .specify/templates/spec-template.md: ⚠ pending (review for alignment with new principles)
+- .specify/templates/tasks-template.md: ⚠ pending (review for alignment with new principles)
+- .specify/templates/commands/*.md: ⚠ pending (review for alignment with new principles and updated standards)
+Follow-up TODOs:
+- TODO(GOVERNANCE_RULES): Add more specific governance rules if needed.
+-->
+# AI-Spec Driven Textbook & Chapter Automation System Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Spec-first Development
+All content generation and feature implementation must originate from clearly defined and approved written specifications. The spec serves as the foundational artifact.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Single Source of Truth
+Specifications are the single authoritative source that define the structure, content, and workflow for all aspects of the textbook and its automation system.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Deterministic Output
+Given the same approved specification, the automation system must consistently produce identical outputs, ensuring reliability and predictability.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Maintainability & Extensibility Across All Chapters
+The architecture and implementation must support easy maintenance and future expansion across all chapters of the textbook, minimizing technical debt.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Clarity, Correctness, and Technical Accuracy
+All generated content, examples, and explanations must be clear, technically accurate, and correct. This is a non-negotiable standard for the textbook's educational value.
 
-### [PRINCIPLE_6_NAME]
+## Key Standards
 
+Every chapter must include: `/spec.md`, `/instructions.md`, `/assets/`, `/content-draft.md`, `/content-final.md`.
+All tasks must be executed exclusively through Claude using explicit commands: “claude task”, “claude run”, “claude update”.
+All examples must be technically accurate and runnable to ensure practical learning.
+Terminology and structural elements must be consistent across the entire book.
+No manual edits are permitted unless they are explicitly reflected back into the corresponding specification.
 
-[PRINCIPLE__DESCRIPTION]
+## Docusaurus Installation Standards
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+SpecKit must be fully initialized before any Docusaurus setup is initiated.
+Docusaurus installation must only occur through Claude using explicit tasks: `claude task "install and configure docusaurus site"` followed by `claude run`.
+Manual usage of “npx create-docusaurus” outside Claude’s task system is strictly prohibited.
+Docusaurus configuration must align seamlessly with the SpecKit folder structure without overwriting or conflicting with existing files.
+Docusaurus must be installed in a clean subdirectory (e.g., `/site/`) to prevent polluting the SpecKit root directory.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Constraints and Success Criteria
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+**Constraints:**
+No content generation is allowed without an approved specification.
+Mixing manual edits and AI-generated edits is strictly prohibited.
+All folder names must be lowercase and hyphen-separated.
+All images must be stored in the `/assets/` directory with meaningful filenames.
+All chapters must use sequential numbering for consistent organization.
+Only Claude-generated changes are allowed during official workflows.
+All tasks executed must be deterministic and repeatable.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+**Success Criteria:**
+SpecKit must be initialized successfully before Docusaurus setup can proceed.
+Claude must install and configure the Docusaurus site without errors.
+Each chapter’s generated content must match its specification 100%.
+All examples and explanations in the textbook must be correct and validated.
+The folder structure must remain clean and compliant with SpecKit guidelines.
+Docusaurus build processes must run without warnings or errors.
+Claude must be able to regenerate chapters deterministically at any time.
+The final textbook site must render correctly and adhere to all specified standards.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other practices. Any amendments require documentation, approval, and a corresponding migration plan. Adherence to this constitution is mandatory for all project contributions.
+TODO(GOVERNANCE_RULES): Add more specific governance rules if needed.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-05 | **Last Amended**: 2025-12-05

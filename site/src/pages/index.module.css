@@ -1,0 +1,73 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floatingElement1,
+.floatingElement2,
+.floatingElement3 {
+  position: absolute;
+  opacity: 0.6;
+}
+
+.floatingElement1 {
+  top: 10%;
+  left: 5%;
+  width: 150px;
+  height: 150px;
+}
+
+.floatingElement2 {
+  bottom: 15%;
+  right: 10%;
+  width: 120px;
+  height: 120px;
+}
+
+.floatingElement3 {
+  top: 60%;
+  right: 20%;
+  width: 100px;
+  height: 100px;
+  transform: rotate(30deg);
+}
+
+@media screen and (max-width: 768px) {
+  .floatingElement1,
+  .floatingElement2,
+  .floatingElement3 {
+    display: none; /* Hide floating elements on smaller screens */
+  }
+
+  .heroBanner {
+    padding: 2rem 0;
+  }
+}
+
+.aboutUsSection {
+  padding: 3rem 0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: var(--ifm-background-color);
+  border-radius: 8px;
+  box-shadow: var(--ifm-shadow-md);
+}
