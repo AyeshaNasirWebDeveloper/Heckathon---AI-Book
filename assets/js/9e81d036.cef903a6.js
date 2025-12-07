@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunksite=globalThis.webpackChunksite||[]).push([[587],{8639:s=>{s.exports=JSON.parse('{"tags":[{"label":"Docusaurus","permalink":"/Heckathon---AI-Book/blog/tags/docusaurus","description":"Docusaurus tag description","count":1}]}')}}]);

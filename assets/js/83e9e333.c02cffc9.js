@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunksite=globalThis.webpackChunksite||[]).push([[620],{3616:(i,s,e)=>{e.r(s),e.d(s,{default:()=>a});e(6540);var l=e(4848);function a(){return(0,l.jsxs)("div",{style:{padding:"2rem"},children:[(0,l.jsx)("h1",{children:"Contact Us"}),(0,l.jsx)("p",{children:"Email: physical @gmail.com"})]})}}}]);
