@@ -11,17 +11,20 @@ const config = {
     v4: true,
   },
 
-  // IMPORTANT: GitHub Pages URL
+  // REQUIRED FOR GITHUB PAGES
   url: "https://AyeshaNasirWebDeveloper.github.io",
-
-  // IMPORTANT: Repo name (matches exactly your GitHub repo)
   baseUrl: "/Heckathon---AI-Book/",
-
   organizationName: "AyeshaNasirWebDeveloper",
   projectName: "Heckathon---AI-Book",
+  deploymentBranch: "gh-pages",
+  trailingSlash: false,
 
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
+  },
 
   i18n: {
     defaultLocale: "en",
@@ -87,11 +90,11 @@ const config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} AI Physical & Robotics.`,
+      copyright: `Copyright © ${new Date().getFullYear()} AI Physical & Robotics`,
     },
 
     prism: {
-      theme: prismThemes.dracula,
+      theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
   },
