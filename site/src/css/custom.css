@@ -95,3 +95,12 @@
   margin: 40px auto;
   border: none;
 }
+
+.footer a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #104e8b;
+}

@@ -32,7 +32,7 @@ const ModuleList = [
 
 function Module({title, description}) {
   return (
-    <div className={clsx('col col--4', styles.moduleCard)}>
+    <div className={clsx('col ', styles.moduleCard)}>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>

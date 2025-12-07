@@ -21,7 +21,7 @@ export default function LayoutWrapper(props) {
         exit="exit"
         variants={pageVariants}
         transition={{ duration: 0.3 }}
-        style={{ width: '100%' }} // Ensure the motion.div takes full width
+        style={{ width: '100%' }}
       >
         <Layout {...props}>
           {props.children}
